@@ -17,7 +17,7 @@ if (uid) {
         }
         process.exit();
     }).catch(error => {
-        console.log("Error reading Custom Claims: ", error);
+        console.log("Error reading Custom Claim: ", error);
         process.exit();
     })
 } else {
