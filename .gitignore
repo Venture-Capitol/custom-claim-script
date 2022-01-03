@@ -1,0 +1,8 @@
+/node_modules
+.DS_Store
+dist
+.idea
+*.local
+*.log
+
+firebase.json
