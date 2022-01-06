@@ -8,13 +8,13 @@ if (uid) {
     initializeApp({
         credential: admin.credential.cert(serviceAccount)
     });
-    getAuth().setCustomUserClaims(uid, {isAdmin: true}).then(() => {
+    getAuth().setCustomUserClaims(uid, {role: "admin"}).then(() => {
         console.log("Custom Claim successfully added to UID.");
         process.exit();
     }).catch(error => {
         console.log("Error adding Custom Claim: ", error);
         process.exit();
-    })
+    });
 } else {
     console.log("UID argument is required.");
     process.exit();

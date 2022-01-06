@@ -10,14 +10,14 @@ if (uid) {
     });
     getAuth().getUser(uid).then(user => {
         const currentCustomClaims = user.customClaims;
-        if (currentCustomClaims != undefined && currentCustomClaims["isAdmin"] != undefined) {
-            console.log("Custom Claim isAdmin: " + currentCustomClaims["isAdmin"]);
+        if (currentCustomClaims != undefined && currentCustomClaims["role"] != undefined) {
+            console.log("Custom Claim role: " + currentCustomClaims["role"]);
         } else {
-            console.log("Custom Claim isAdmin is not set for this UID.")
+            console.log("Custom Claim role is not set for this UID.")
         }
         process.exit();
     }).catch(error => {
-        console.log("Error reading Custom Claim: ", error);
+        console.log("Error reading Custom Claim role: ", error);
         process.exit();
     })
 } else {
