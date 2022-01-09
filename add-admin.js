@@ -10,7 +10,14 @@ if (uid) {
     });
     getAuth().setCustomUserClaims(uid, {role: "admin"}).then(() => {
         console.log("Custom Claim successfully added to UID.");
-        process.exit();
+    }).then(() => {
+        getAuth().revokeRefreshTokens(uid).then(() => {
+            console.log("Refresh Tokens successfully revoked.");
+            process.exit();
+        }).catch(error => {
+            console.log("Error revoking Refresh Tokens: ", error);
+            process.exit();
+        });
     }).catch(error => {
         console.log("Error adding Custom Claim: ", error);
         process.exit();
