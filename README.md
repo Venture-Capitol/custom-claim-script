@@ -16,7 +16,7 @@ Script to add an admin Firebase Custom Claim and view those.
 
 ### Running:
 
-You can set an admin Firebase Custom Claim using `npm add-admin <users-uid-here>` and can view that admin Custom Claim using `npm view-claim <users-uid-here>`
+You can set an admin Firebase Custom Claim using `node add-admin <users-uid-here>` and can view that admin Custom Claim using `node view-claim <users-uid-here>`
 
 ## Folder Structure
 
